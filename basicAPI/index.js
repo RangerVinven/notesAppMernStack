@@ -2,17 +2,17 @@ const express = require("express");
 const app = express();
 const port = 5000;
 
-app.get("/", (request, response) => {
-    const test = [{
-        "Note": "Test1",
-        "Link": "Test2",
+app.get("/notes", (request, response) => {
+    const notes = [{
+        text: "Make Notes Website",
+        link: "https://www.youtube.com/watch?v=E8vYlkx9EQw&t=1182s&ab_channel=CodewithAhsan",
     }, {
-        "Note": "Hello2",
-        "Link": "fdsa"
+        text: "Revise",
+        link: "https://docs.google.com/spreadsheets/d/1wAEC9rGU2YHS3IA08hempMhB5xksKP4YnA8-Enok8LY/edit#gid=0"
     }];
 
     response.json({
-        response: test
+        response: notes
     });
 
 });
