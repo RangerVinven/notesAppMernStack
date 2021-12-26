@@ -1,11 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
 
 function App() {
 
-  const getNotes = () => {
-    console.log("Hello World!");
+  const getNotes = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/notes");
+      console.log(response)
+
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
